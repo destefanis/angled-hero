@@ -1,3 +1,56 @@
+$sans: 'Roboto', sans-serif;
+$white: #fff;
+
+// Hero Styles
+.hero {
+  display: block;
+  height: 400px;
+  width: 100%;
+  font-family: $sans;
+  color: $white;
+}
+
+.layer-container {
+  border-right: 8px solid $white;
+  transform: skew(-55deg);
+  transform-origin: top left;
+  overflow: hidden;
+  transition: all 1s ease;
+
+  &:hover {
+    margin-left: 14em;
+
+    .hero__layer--second {
+      
+      margin-left: 16em;
+    }
+  }
+}
+
+.hero__layer-image {
+  height: 400px;
+  width: 100%;
+  padding: 4em;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.hero__layer--first {
+  position: absolute;
+}
+
+.hero__layer--second {
+  margin-left: 17.75em;
+  transform: skew(55deg);
+}
+
+.hero__layer-title {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 /**
  * Site header
  */
