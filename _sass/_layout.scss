@@ -1,5 +1,7 @@
 $sans: 'Roboto', sans-serif;
+$primary: #fd4d02;
 $white: #fff;
+$black: #262626;
 
 // Hero Styles
 .hero {
@@ -10,24 +12,21 @@ $white: #fff;
   color: $white;
 }
 
-.layer-container {
+.hero-layer--top {
   border-right: 8px solid $white;
   transform: skew(-55deg);
   transform-origin: top left;
   overflow: hidden;
-  transition: all 1s ease;
+  transition: all 1.25s ease-in-out;
+  width: 78%;
+  display: inline-block;
 
   &:hover {
-    margin-left: 14em;
-
-    .hero__layer--second {
-      
-      margin-left: 16em;
-    }
+    width: 100%;
   }
 }
 
-.hero__layer-image {
+.hero-layer__image {
   height: 400px;
   width: 100%;
   padding: 4em;
@@ -35,20 +34,59 @@ $white: #fff;
   cursor: pointer;
 }
 
-.hero__layer--first {
+.hero-layer--bottom {
+  text-align: right;
+}
+
+.hero-layer__image--bottom {
   position: absolute;
 }
 
-.hero__layer--second {
+.hero-layer--bottom:hover + .hero-layer--top {
+  width: 50%;
+}
+
+.hero-layer__image--top {
   margin-left: 17.75em;
   transform: skew(55deg);
 }
 
-.hero__layer-title {
-  font-size: 1.6em;
+.hero-layer__title {
+  font-size: 1.8em;
   text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.25em;
+}
+
+// We can't text-align right and set a max-width
+// on the body content, without using a container.
+.hero-layer__content {
+  max-width: 400px;
+  display: inline-block;
+}
+
+.hero-layer__body {
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em;
+  background: $primary;
   letter-spacing: 1px;
+  color: $white;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $black;
+    color: $white;
+    text-decoration: none;
+  }
 }
 
 /**
